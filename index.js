@@ -8,7 +8,7 @@ const app = express()
 
 // // // Below for handle CORS Policy error --------->
 app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", process.env.FRONTEND );
+    res.setHeader("Access-Control-Allow-Origin", "*" );
     res.header(
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept"

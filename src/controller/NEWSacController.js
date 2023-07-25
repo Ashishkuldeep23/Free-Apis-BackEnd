@@ -17,7 +17,7 @@ async function everything (req, res){
 
    
 
-    console.log(req.query)
+    // console.log(req.query)
 
     const options = {
         method: "GET",
