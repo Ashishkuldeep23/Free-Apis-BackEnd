@@ -13,7 +13,7 @@ async function everything (req, res){
 
     
 
-    let {q = "ISRO" , from = "" , to = ""  , pageSize = 20 , page = 1} = req.query
+    let {q = "ISRO" , from = "" , to = ""  , pageSize = 20 , page = 1 , sortBy="publishedAt"} = req.query
 
    
 
@@ -21,7 +21,7 @@ async function everything (req, res){
 
     const options = {
         method: "GET",
-        url: `https://newsapi.org/v2/everything?q=${q}&from=${from}&to=${to}&pageSize=${pageSize}&page=${page}&sortBy=popularity&apiKey=${Api_key}`,
+        url: `https://newsapi.org/v2/everything?q=${q}&from=${from}&to=${to}&pageSize=${pageSize}&page=${page}&sortBy=${sortBy}&apiKey=${Api_key}`,
     };
 
 
@@ -53,13 +53,13 @@ async function topHeadlines(req, res) {
 
     // const {page , category , pageSize , country} = req.query     // // // All valid queries are:
 
-    let {page = 1 , category = "" , pageSize = 20 , country} = req.query
+    let {page = 1 , category = "" , pageSize = 20 , country , sortBy="publishedAt" } = req.query
 
     console.log(req.query)
 
     const options = {
         method: "GET",
-        url: `https://newsapi.org/v2/top-headlines?country=${country || "in"}&sortBy=publishedAt&page=${page}&category=${category}&pageSize=${pageSize}&apiKey=${Api_key}`,
+        url: `https://newsapi.org/v2/top-headlines?country=${country || "in"}&sortBy=${sortBy}&page=${page}&category=${category}&pageSize=${pageSize}&apiKey=${Api_key}`,
     };
 
 
