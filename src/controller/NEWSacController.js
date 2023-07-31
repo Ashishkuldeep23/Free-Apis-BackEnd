@@ -7,7 +7,7 @@ const axios = require("axios")
 
 async function everything (req, res){
     
-    const Api_key = process.env.API_KEY
+    const Api_key = process.env.API_KEY1
 
     // const {page , category , pageSize , country} = req.query     // // // All valid queries are:
 
@@ -50,7 +50,7 @@ async function everything (req, res){
 
 async function topHeadlines(req, res) {
 
-    const Api_key = process.env.API_KEY
+    const Api_key = process.env.API_KEY1
 
     // const {page , category , pageSize , country} = req.query     // // // All valid queries are:
 
