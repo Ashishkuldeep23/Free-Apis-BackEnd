@@ -36,8 +36,9 @@ async function everything (req, res){
         res.status(200).send({ status: true , totalGot : response.data.articles.length , data : response.data });
 
     } catch (error) {
-        res.status(500).send({ status: false, message : error.message });
-
+        let axiosMessage = error.response.data.message
+        // console.log(error.response.data.message)
+        res.status(500).send({ status: false, message : error.message , axiosMessage : axiosMessage });
     }
 
 }
@@ -55,7 +56,7 @@ async function topHeadlines(req, res) {
 
     let {page = 1 , category = "" , pageSize = 20 , country , sortBy="publishedAt" } = req.query
 
-    console.log(req.query)
+    // console.log(req.query)
 
     const options = {
         method: "GET",
@@ -74,7 +75,10 @@ async function topHeadlines(req, res) {
         res.status(200).send({ status: true , totalGot : response.data.articles.length , data : response.data });
 
     } catch (error) {
-        res.status(500).send({ status: false, message : error.message });
+
+        let axiosMessage = error.response.data.message
+        // console.log(error.response.data.message)
+        res.status(500).send({ status: false, message : error.message , axiosMessage : axiosMessage });
 
     }
 
